@@ -1,0 +1,4 @@
+FROM openjdk:11
+ADD target/eureka_client-0.0.1-SNAPSHOT.jar wyp-ksi-eureka-client.jar
+EXPOSE 8081
+ENTRYPOINT ["java","-jar","wyp-ksi-eureka-client.jar"]

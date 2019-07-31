@@ -1,0 +1,50 @@
+Zadanie:
+
+Zaimplementuj prostą wypożyczalnię książek wykorzystującą stos technologiczny Springa
+klucz: 7d7ad1a964b484e1aa5a5e4501679eaa
+auth: b5e75c3e9df292554f2a00dd6d07007c82eb40e97a9476520cececa15e74a25d
+id: 5d249a7a04a2e2557bb72508
+
+kubectl run wyp-ksi --image=kamszo/wyp-ksiazek2 --port=8080
+docker run -p 8080:8080 --name wyp-ksi -d wyp-ksi
+docker build . -t wyp-ksi
+kubectl create -f service-definition.yml
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+token: b5e75c3e9df292554f2a00dd6d07007c82eb40e97a9476520cececa15e74a25d
+
+Podstawowe opcje:
+- utworzenie nowego czytelnika
+- usunięcie czytelnika
+- dodanie książki do wypożyczalni
+- usunięcie książki z wypożyczalni
+- wyświetlenie książek
+- wypożyczenie książki przez czytelnika (tylko jeden czytelnik może wypożyczać tę samą książkę w danym momencie, czytelnik z nałożoną karą nie może wypożyczać ksiązek)
+- zwrot wypożyczonej książki (wraz z prostym systemem kar za przetrzymanie: do tygodnia stała opłata 2 zł, po tym czasie dochodzi dodatkowe 50 gr za każdy dzień przetrzymania)
+
+Dodatkowe funcjonalności:
+- przedłużanie
+- admin API (zarządzanie zasobami biblioteki)
+- sugestie czytelników dla biblioteki (sugestia trafia na boarda trello biblioteki)
+- wysyłanie powiadomień o poważnych zadłużeniach na boarda trello biblioteki (https://developers.trello.com/reference#introduction)
+
+Mile widziane:
+- użycie bazy danych
+- walidacja
+- wzorce projektowe
+- testy jednostkowe/integracyjne
+- użycie narzędzia do budowania aplikacji
+- dodatkowa logika usprawniająca pracę systemu
+- wykorzystanie spring security do logowania i authoryzacji
+- flyway/liqubase
+- schuduler do naliczania kar
+
+Sugerowanie kroki:
+
+1. Prosta apka spring boot z podstawowymi opcjami
+2. Wprowadzanie mile widzianych opcji
+3. Dodanie dodatkowych funkcjonalności
+
+Aplikacja powinna posiadać API REST’owe i uruchamiać się bez błędów.
+Gotową aplikację umieść w repozytorium GIT i prześlij nam jej adres.
+W przypadku dodatkowych kroków potrzebnych do uruchomienia aplikacji, zamieść je w pliku README.
