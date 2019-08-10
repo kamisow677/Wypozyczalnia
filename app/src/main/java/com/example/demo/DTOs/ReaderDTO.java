@@ -2,6 +2,7 @@ package com.example.demo.DTOs;
 
 import lombok.*;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
@@ -12,15 +13,15 @@ import java.util.List;
 @ToString(includeFieldNames=true)
 public class ReaderDTO{
 
-    @NonNull
+    @NotNull
     @Size(min=2, max=30)
     private String firstName;
 
-    @NonNull
+    @NotNull
     @Size(min=2, max=30)
     private String lastName;
 
-    @NonNull
+    @NotNull
     private BigDecimal punishment;
 
     private List<BookDTO> booksDTO;

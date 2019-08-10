@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.lang.Nullable;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 @NoArgsConstructor
@@ -11,11 +12,11 @@ import java.time.LocalDate;
 @Data
 @ToString(includeFieldNames=true)
 public class BookDTO {
-    @NonNull
+    @NotNull
     @Size(min=1, max=30)
     private String title;
 
-    @NonNull
+    @NotNull
     @Size(min=2, max=30)
     private String author;
 

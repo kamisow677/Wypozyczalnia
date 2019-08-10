@@ -1,5 +1,4 @@
 package com.example.demo.mail;
-import com.icegreen.*;
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.ServerSetup;
 import org.junit.rules.ExternalResource;
